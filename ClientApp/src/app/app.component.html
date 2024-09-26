@@ -1,0 +1,9 @@
+<body>
+  <app-nav-menu></app-nav-menu>
+  <main class="container">
+    <app-product-form (productAdded)="productList.onProductAdded()"></app-product-form>
+    <app-product-list #productList></app-product-list>
+    <app-cart></app-cart>
+    <app-simulated-date></app-simulated-date>
+  </main>
+</body>

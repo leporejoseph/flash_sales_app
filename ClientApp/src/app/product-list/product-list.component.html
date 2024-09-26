@@ -1,0 +1,34 @@
+<div class="card mb-4">
+  <div class="card-header">
+    <h2>Product List</h2>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Sale Date</th>
+          <th>Sale Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>{{ product.saleDate | date }}</td>
+          <td>{{ product.salePrice }}</td>
+          <td>
+            <button (click)="addToCart(product)" class="btn btn-success">Add to Cart</button>
+            <button (click)="deleteProduct(product)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="outOfStockWarning" class="warning">{{ outOfStockWarning }}</div>
+    <div *ngIf="cartMessage" class="cart-message">{{ cartMessage }}</div>
+  </div>
+</div>

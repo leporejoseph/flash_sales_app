@@ -1,0 +1,30 @@
+<div class="card mb-4">
+  <div class="card-header">
+    <h2>Add Product</h2>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Name:</label>
+        <input class="form-control" formControlName="name" required>
+      </div>
+      <div class="form-group">
+        <label>Price:</label>
+        <input type="number" class="form-control" formControlName="price" required>
+      </div>
+      <div class="form-group">
+        <label>Quantity:</label>
+        <input type="number" class="form-control" formControlName="quantity" required>
+      </div>
+      <div class="form-group">
+        <label>Sale Date:</label>
+        <input type="date" class="form-control" formControlName="saleDate">
+      </div>
+      <div class="form-group">
+        <label>Sale Price:</label>
+        <input type="number" class="form-control" formControlName="salePrice">
+      </div>
+      <button type="submit" class="btn btn-primary">Add Product</button>
+    </form>
+  </div>
+</div>
